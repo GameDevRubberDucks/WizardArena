@@ -36,14 +36,14 @@ public class Character_Control : MonoBehaviour
 
         if(moveHorizontal > 0.01f)
         {
-            rig.transform.rotation = new quaternion(0f, 180f, 0f, 0f);
+            rig.transform.localScale = new Vector3 (-0.5f, 0.5f,0.5f);
         }
         else if (moveHorizontal < -0.01f)
         {
-            rig.transform.rotation = new quaternion(0f, 0f, 0f, 0f);
+            rig.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
 
-            rb.AddForce(movement * movementSpeed);
+            rb.velocity = (movement * movementSpeed);
     }
 
 
