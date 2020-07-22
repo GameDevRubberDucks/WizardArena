@@ -53,11 +53,7 @@ public class AimController : MonoBehaviour
         //get the sprite renderer
         m_spriteRenderer = indicatorSprite.GetComponent<SpriteRenderer>();
 
-        //setup the sprite to the renderer
-        m_spriteRenderer.sprite = indicatorTypes[0].indicatorSprite;
-
-        //setup the desired color to the renderer
-        m_spriteRenderer.color = indicatorTypes[0].indicatorColor;
+        indicator.SetActive(false);
 
         //inital new mouse plane at y=0;
         plane = new Plane(Vector3.up, 0.0f);
@@ -73,19 +69,19 @@ public class AimController : MonoBehaviour
         //activate AOE
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            ActivateSpell(SpellIndicatorType.AOE);
+            IndicatorToggle(SpellIndicatorType.AOE);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            ActivateSpell(SpellIndicatorType.CONE);
+            IndicatorToggle(SpellIndicatorType.CONE);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            ActivateSpell(SpellIndicatorType.BEAM);
+            IndicatorToggle(SpellIndicatorType.BEAM);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            ActivateSpell(SpellIndicatorType.PROJECTILE);
+            IndicatorToggle(SpellIndicatorType.PROJECTILE);
         }
 
         //################## SPELL BEHAVIOUR ##################
@@ -98,18 +94,23 @@ public class AimController : MonoBehaviour
             //De-activate the spell
             if (Input.GetMouseButton(0))
             {
-                DeactivateSpell();
+                DeactivateIndicator();
             }
         }
         else if (spellIndicatorType == SpellIndicatorType.CONE || spellIndicatorType == SpellIndicatorType.BEAM || spellIndicatorType == SpellIndicatorType.PROJECTILE)
         {
             //set indicator point to the mouse position on the mouse plane and add 0.01 to y to avoid sprite artifacts
-            indicator.transform.forward = GetMousePositionOnPlane() - indicator.transform.position;
+
+            Vector3 pos_temp = GetMousePositionOnPlane() - indicator.transform.position;
+            //lock the sprite to the x,z plane
+            pos_temp.y = 0f;
+            //set forward to indicat
+            indicator.transform.forward = pos_temp;
 
             //De-activate the spell
             if (Input.GetMouseButton(0))
             {
-                DeactivateSpell();
+                DeactivateIndicator();
             }
         }
 
@@ -135,15 +136,20 @@ public class AimController : MonoBehaviour
     }
 
     //deactivate the current spell
-    void DeactivateSpell()
+    void DeactivateIndicator()
     {
         spellIndicatorType = SpellIndicatorType.OFF;
         //disable the indicator sprite object
         indicator.SetActive(false);
         indicator.transform.position = gameObject.transform.position;
     }
-    void ActivateSpell(SpellIndicatorType type)
+    void IndicatorToggle(SpellIndicatorType type)
     {
+        if(spellIndicatorType == type)
+        {
+            DeactivateIndicator();
+            return;
+        }
         spellIndicatorType = type;
         //set the sprite
         m_spriteRenderer.sprite = indicatorTypes[(int)type].indicatorSprite;
