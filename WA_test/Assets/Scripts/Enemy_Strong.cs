@@ -20,6 +20,7 @@ public class Enemy_Strong: Enemy_Base
     void Update()
     {
         SeekPlayer();
+
     }
 
 }  
