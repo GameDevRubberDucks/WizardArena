@@ -215,6 +215,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238446382}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &413602892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 413602893}
+  m_Layer: 0
+  m_Name: Indicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &413602893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413602892}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 929704246}
+  m_Father: {fileID: 521611719}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &521611718
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +274,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 929704246}
+  - {fileID: 413602893}
   m_Father: {fileID: 1329327071}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -259,11 +290,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0baf850a425564e8eb62460f0d39c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicatorSprite: {fileID: 21300000, guid: 16ee883db3849fb4bbc3b425e4996ff9, type: 3}
-  indicatorColor: {r: 0, g: 0.9436557, b: 1, a: 1}
-  maxDistanceFromBody: 0
-  minDistanceFromBody: 0
-  planeObject: {fileID: 1288336545}
+  indicator: {fileID: 413602892}
+  indicatorTypes:
+  - type: 0
+    indicatorSprite: {fileID: 21300000, guid: 16ee883db3849fb4bbc3b425e4996ff9, type: 3}
+    indicatorColor: {r: 0, g: 1, b: 0.15980244, a: 1}
+    maxDistanceFromBody: 1
+  - type: 1
+    indicatorSprite: {fileID: 21300000, guid: 5923ca588b09d8d4f9c3d78cc7ca619a, type: 3}
+    indicatorColor: {r: 0, g: 0.9817288, b: 1, a: 1}
+    maxDistanceFromBody: 2
+  - type: 2
+    indicatorSprite: {fileID: 21300000, guid: 77f6be3f5bdbbfe46be0a7433bc7c4fb, type: 3}
+    indicatorColor: {r: 1, g: 0.9863347, b: 0, a: 1}
+    maxDistanceFromBody: 3
+  - type: 3
+    indicatorSprite: {fileID: 21300000, guid: 38c115076f81f124683e377624b46f4f, type: 3}
+    indicatorColor: {r: 1, g: 0, b: 0.7260461, a: 1}
+    maxDistanceFromBody: 4
 --- !u!1 &929704245
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,11 +332,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929704245}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 521611719}
+  m_Father: {fileID: 413602893}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &929704247
@@ -334,7 +378,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 77f6be3f5bdbbfe46be0a7433bc7c4fb, type: 3}
   m_Color: {r: 0.10566044, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -342,7 +386,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1153368127
@@ -511,7 +555,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1329327071}
-  - component: {fileID: 1329327072}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -535,25 +578,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1329327072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329327070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 039a2c55297cc524588a7ba7b41f3315, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cone: 0
-  projectile: 0
-  beam: 0
-  aoe: 0
-  sprite: {fileID: 0}
-  maxDistanceFromBody: 0
-  minDistanceFromBody: 0
 --- !u!1 &1493054967
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,7 +722,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
