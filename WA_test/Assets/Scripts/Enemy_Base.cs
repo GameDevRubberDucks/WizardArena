@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy_Base: MonoBehaviour
 {
-    //--- Public Variabls ---//
+    //--- Setup Variables ---//
+    public Character_Control player;
+
+    //--- Public Variables ---//
 
     //Enemy Stats (Out of 100 for now)
     public float speed = 0.0f;
@@ -16,20 +20,20 @@ public class Enemy_Base: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //Find PLayer once we have a script on it
+        player = FindObjectOfType<Character_Control>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void TakeDamage(float damageRecieved)
     {
         currentHP -= damageRecieved;
     }
-
     public void DealDamage(float damageDealt, GameObject player)
     {
         player.GetComponentInChildren<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
@@ -37,11 +41,10 @@ public class Enemy_Base: MonoBehaviour
 
 
     // Make Basic AI 
-    /*
-     * 
-     * Code Goes Here
-     * 
-     */
+    public void SeekPlayer()
+    {
+        this.GetComponent<NavMeshAgent>().destination = player.transform.position;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
