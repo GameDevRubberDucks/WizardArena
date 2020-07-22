@@ -10,7 +10,6 @@ public class Wave_List : MonoBehaviour
 
     //--- Private Variables ---//
     private List<GameObject> m_enemiesLeftToSpawn;
-    private List<GameObject> m_spawnedEnemies;
     private Wave_Descriptor m_currentWave;
     private int m_currentWaveIdx;
 
@@ -21,10 +20,12 @@ public class Wave_List : MonoBehaviour
     {
         // Init the private variables
         m_enemiesLeftToSpawn = new List<GameObject>();
-        m_spawnedEnemies = new List<GameObject>();
         m_currentWave = null;
         m_currentWaveIdx = 0;
+    }
 
+    private void Start()
+    {
         // Start the first wave
         StartWave();
     }
@@ -32,25 +33,6 @@ public class Wave_List : MonoBehaviour
 
 
     //--- Methods ---//
-    public bool CheckIfWaveComplete()
-    {
-        // If there are no more enemies, the wave is complete
-        return (m_spawnedEnemies.Count == 0);
-    }
-
-    public void NextWave()
-    {
-        // Increase the current wave
-        m_currentWaveIdx++;
-
-        // If we reached the end of the waves, end the game
-        // Otherwise, start the next wave
-        if (m_currentWaveIdx >= m_waves.Count)
-            Debug.Log("GAME OVER: All waves complete");
-        else
-            StartWave();
-    }
-
     public void StartWave()
     {
         // Set the current wave reference
@@ -63,5 +45,32 @@ public class Wave_List : MonoBehaviour
         foreach (var obj in m_enemiesLeftToSpawn)
             waveText += obj.ToString() + "\n";
         Debug.Log(waveText);
+    }
+
+    public void NextWave()
+    {
+        // Increase the current wave
+        m_currentWaveIdx++;
+
+        // If we reached the end of the waves, end the game
+        if (m_currentWaveIdx >= m_waves.Count)
+            Debug.Log("GAME OVER: All waves complete");
+    }
+
+    public GameObject SelectNextEnemy()
+    {
+        // If there are no enemies left to spawn, return null
+        if (m_enemiesLeftToSpawn.Count == 0)
+            return null;
+
+        // Otherwise, we should randomly select one of the enemies
+        int randIdx = Random.Range(0, m_enemiesLeftToSpawn.Count);
+        var enemy = m_enemiesLeftToSpawn[randIdx];
+
+        // We should remove the enemy from the list since it is about to be spawned
+        m_enemiesLeftToSpawn.RemoveAt(randIdx);
+
+        // Return the enemy object so it can be spawned
+        return enemy;
     }
 }
