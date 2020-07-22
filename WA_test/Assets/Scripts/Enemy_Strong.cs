@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy_Strong: Enemy_Base
 {
@@ -11,13 +12,14 @@ public class Enemy_Strong: Enemy_Base
         health = 100;
         speed = 10;
         strength = 90;
-
+        this.GetComponent<NavMeshAgent>().speed = speed;
+        player = FindObjectOfType<Character_Control>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        SeekPlayer();
     }
 
 }  
