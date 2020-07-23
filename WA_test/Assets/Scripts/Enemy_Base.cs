@@ -7,7 +7,7 @@ public class Enemy_Base: MonoBehaviour
 {
     //--- Setup Variables ---//
     public Character_Control player;
-
+    public Spawn_Controller spawner;
     //--- Public Variables ---//
 
     //Enemy Stats (Out of 100 for now)
@@ -22,7 +22,8 @@ public class Enemy_Base: MonoBehaviour
     {
         //Find PLayer once we have a script on it
         player = FindObjectOfType<Character_Control>();
-        
+        spawner = FindObjectOfType<Spawn_Controller>();
+
     }
 
     // Update is called once per frame
@@ -37,6 +38,15 @@ public class Enemy_Base: MonoBehaviour
     public void DealDamage(float damageDealt, GameObject player)
     {
         player.GetComponentInChildren<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
+        player.GetComponent<Player_Health>().TakeDamage(damageDealt);
+    }
+
+    public void DeathCheck()
+    {
+        if (currentHP <= 0.0f)
+        {   
+            spawner.EnemyKilled(this.gameObject);
+        }
     }
 
 
