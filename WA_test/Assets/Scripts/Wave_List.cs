@@ -35,16 +35,19 @@ public class Wave_List : MonoBehaviour
     //--- Methods ---//
     public void StartWave()
     {
-        // Set the current wave reference
-        m_currentWave = m_waves[m_currentWaveIdx];
+        if (m_currentWaveIdx < m_waves.Count)
+        {
+            // Set the current wave reference
+            m_currentWave = m_waves[m_currentWaveIdx];
 
-        // Start by having the wave object generate the list of enemies to spawn
-        m_enemiesLeftToSpawn = m_currentWave.GenerateEnemyList();
+            // Start by having the wave object generate the list of enemies to spawn
+            m_enemiesLeftToSpawn = m_currentWave.GenerateEnemyList();
 
-        string waveText = "";
-        foreach (var obj in m_enemiesLeftToSpawn)
-            waveText += obj.ToString() + "\n";
-        Debug.Log(waveText);
+            string waveText = "";
+            foreach (var obj in m_enemiesLeftToSpawn)
+                waveText += obj.ToString() + "\n";
+            Debug.Log(waveText);
+        }
     }
 
     public void NextWave()
