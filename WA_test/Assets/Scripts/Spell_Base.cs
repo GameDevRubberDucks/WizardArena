@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Spell", menuName = "ScriptableObjects/Custom/Spell", order = 1)]
-public class Spell : ScriptableObject
+[CreateAssetMenu(fileName = "Spell", menuName = "Custom/Spell", order = 1)]
+public class Spell_Base : ScriptableObject
 {
     //--- Public Variables ---//
     [Header("HUD Information")]
