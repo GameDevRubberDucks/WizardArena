@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Player_Health.cs" />
     <Compile Include="Assets\Scripts\Spawn_Controller.cs" />
     <Compile Include="Assets\Scripts\Spell_AutoDestroyer.cs" />
+    <Compile Include="Assets\Scripts\Spell_Controller.cs" />
     <Compile Include="Assets\Scripts\TempClickDamage.cs" />
     <Compile Include="Assets\Scripts\Wave_Descriptor.cs" />
     <Compile Include="Assets\Scripts\Wave_List.cs" />
