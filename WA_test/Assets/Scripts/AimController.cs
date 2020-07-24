@@ -136,7 +136,7 @@ public class AimController : MonoBehaviour
     }
 
     //deactivate the current spell
-    void DeactivateIndicator()
+    public void DeactivateIndicator()
     {
         spellIndicatorType = SpellIndicatorType.OFF;
         //disable the indicator sprite object
