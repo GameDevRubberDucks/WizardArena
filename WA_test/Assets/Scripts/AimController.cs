@@ -165,8 +165,8 @@ public class AimController : MonoBehaviour
         indicator.SetActive(true);
     }
 
-    public Vector3 GetIndicatorPosition()
+    public GameObject GetIndicatorObject()
     {
-        return indicator.transform.position;
+        return indicator;
     }
 }

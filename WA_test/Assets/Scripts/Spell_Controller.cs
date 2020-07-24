@@ -77,9 +77,11 @@ public class Spell_Controller : MonoBehaviour
         if (m_currentSpell == null || m_currentSpellIdx == -1)
             return;
 
-        // Spawn the spell FX on the target indicator's current position
-        Vector3 targetPos = m_aimController.GetIndicatorPosition();
-        Instantiate(m_currentSpell.m_fxPrefab, targetPos, Quaternion.identity, null);
+        // Spawn the spell FX on the target indicator's current position and rotation
+        var targetObj = m_aimController.GetIndicatorObject();
+        Vector3 targetPos = targetObj.transform.position;
+        Quaternion targetRot = targetObj.transform.rotation;
+        Instantiate(m_currentSpell.m_fxPrefab, targetPos, targetRot, null);
 
         // Deactivate the current spell
         ToggleSpellSlot(m_currentSpellIdx);
