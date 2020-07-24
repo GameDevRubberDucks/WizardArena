@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8671776284659769131}
   m_Layer: 0
   m_Name: Rock Spikes Collision
-  m_TagString: Untagged
+  m_TagString: Spell_Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
