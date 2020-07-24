@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
-public class Spell_AutoDestroyer : MonoBehaviour
+public class Spell_Object : MonoBehaviour
 {
     //--- Public Variables ---//
+    public Spell_Base m_spellData;
     public ParticleSystem m_parentParticleFX;
 
     

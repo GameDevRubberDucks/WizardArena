@@ -14715,6 +14715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583ac3f680de26e4ba3b895d48c027de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spellData: {fileID: 11400000, guid: d79093a765247244fa732c1a5c06fb9c, type: 2}
   m_parentParticleFX: {fileID: 8542616113222518742}
 --- !u!1 &8542616114181740110
 GameObject:

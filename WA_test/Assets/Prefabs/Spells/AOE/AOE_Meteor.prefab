@@ -24109,6 +24109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583ac3f680de26e4ba3b895d48c027de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spellData: {fileID: 11400000, guid: 195c37b8513fd5e40bd5aaafa1451fd2, type: 2}
   m_parentParticleFX: {fileID: 1038944322979948333}
 --- !u!1 &1038944322979948322
 GameObject:
