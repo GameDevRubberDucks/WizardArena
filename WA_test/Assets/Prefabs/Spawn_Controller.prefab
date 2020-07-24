@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 0
   m_Name: Spawn Location
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -42,7 +42,7 @@ GameObject:
   m_Layer: 0
   m_Name: Spawn Location
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -72,7 +72,7 @@ GameObject:
   m_Layer: 0
   m_Name: Spawn Location
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -99,6 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1622688791458924393}
+  - component: {fileID: 5934237628007572091}
   - component: {fileID: 1622688791458924398}
   m_Layer: 0
   m_Name: Spawn_Controller
@@ -125,6 +126,94 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5934237628007572091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622688791458924399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a467ebe85e7f04cbc6deb2c8dd3a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_waves:
+  - m_requiredEnemies:
+    - m_enemyObj: {fileID: 8092967232755415374, guid: 6bd284bf87a98f74992517f053d71f29,
+        type: 3}
+      m_requiredCount: 3
+    m_numRandomSpawns: 2
+    m_randomEnemies:
+    - m_enemyObj: {fileID: 1357481334463155442, guid: da76a482990ef874cbd3a90a14b1b1c5,
+        type: 3}
+      m_ratio: 2
+    - m_enemyObj: {fileID: 3641528076025847606, guid: e9f84e224edce43448efc9b35c825963,
+        type: 3}
+      m_ratio: 1
+  - m_requiredEnemies: []
+    m_numRandomSpawns: 8
+    m_randomEnemies:
+    - m_enemyObj: {fileID: 1357481334463155442, guid: da76a482990ef874cbd3a90a14b1b1c5,
+        type: 3}
+      m_ratio: 2
+    - m_enemyObj: {fileID: 3641528076025847606, guid: e9f84e224edce43448efc9b35c825963,
+        type: 3}
+      m_ratio: 1
+    - m_enemyObj: {fileID: 8092967232755415374, guid: 6bd284bf87a98f74992517f053d71f29,
+        type: 3}
+      m_ratio: 5
+  - m_requiredEnemies:
+    - m_enemyObj: {fileID: 1357481334463155442, guid: da76a482990ef874cbd3a90a14b1b1c5,
+        type: 3}
+      m_requiredCount: 1
+    - m_enemyObj: {fileID: 3641528076025847606, guid: e9f84e224edce43448efc9b35c825963,
+        type: 3}
+      m_requiredCount: 1
+    m_numRandomSpawns: 8
+    m_randomEnemies:
+    - m_enemyObj: {fileID: 1357481334463155442, guid: da76a482990ef874cbd3a90a14b1b1c5,
+        type: 3}
+      m_ratio: 2
+    - m_enemyObj: {fileID: 3641528076025847606, guid: e9f84e224edce43448efc9b35c825963,
+        type: 3}
+      m_ratio: 1
+    - m_enemyObj: {fileID: 8092967232755415374, guid: 6bd284bf87a98f74992517f053d71f29,
+        type: 3}
+      m_ratio: 3
+  - m_requiredEnemies:
+    - m_enemyObj: {fileID: 1357481334463155442, guid: da76a482990ef874cbd3a90a14b1b1c5,
+        type: 3}
+      m_requiredCount: 2
+    - m_enemyObj: {fileID: 3641528076025847606, guid: e9f84e224edce43448efc9b35c825963,
+        type: 3}
+      m_requiredCount: 1
+    - m_enemyObj: {fileID: 8092967232755415374, guid: 6bd284bf87a98f74992517f053d71f29,
+        type: 3}
+      m_requiredCount: 10
+    m_numRandomSpawns: 0
+    m_randomEnemies: []
+  - m_requiredEnemies:
+    - m_enemyObj: {fileID: 1357481334463155442, guid: da76a482990ef874cbd3a90a14b1b1c5,
+        type: 3}
+      m_requiredCount: 3
+    - m_enemyObj: {fileID: 3641528076025847606, guid: e9f84e224edce43448efc9b35c825963,
+        type: 3}
+      m_requiredCount: 2
+    - m_enemyObj: {fileID: 8092967232755415374, guid: 6bd284bf87a98f74992517f053d71f29,
+        type: 3}
+      m_requiredCount: 10
+    m_numRandomSpawns: 5
+    m_randomEnemies:
+    - m_enemyObj: {fileID: 1357481334463155442, guid: da76a482990ef874cbd3a90a14b1b1c5,
+        type: 3}
+      m_ratio: 2
+    - m_enemyObj: {fileID: 3641528076025847606, guid: e9f84e224edce43448efc9b35c825963,
+        type: 3}
+      m_ratio: 1
+    - m_enemyObj: {fileID: 8092967232755415374, guid: 6bd284bf87a98f74992517f053d71f29,
+        type: 3}
+      m_ratio: 5
 --- !u!114 &1622688791458924398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d8e5ee47990aa4bb2c236b6e37cdf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeBetweenSpawns: 5
+  m_timeBetweenSpawns: 1
   m_spawnLocations:
   - {fileID: 1622688792014447512}
   - {fileID: 1622688790480690355}
@@ -155,7 +244,7 @@ GameObject:
   m_Layer: 0
   m_Name: Spawn Location
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
