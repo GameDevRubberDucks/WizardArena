@@ -5,9 +5,7 @@ using UnityEngine;
 public class TempClickDamage : MonoBehaviour
 {
     public float damage = 25.0f;
-    public Enemy_Balanced[] enemiesHitBalanced;
-    public Enemy_Weak[] enemiesHitWeak;
-    public Enemy_Strong[] enemiesHitStrong;
+    public Enemy_Base[] enemiesHit;
 
     // Start is called before the first frame update
     void Start()
@@ -20,21 +18,13 @@ public class TempClickDamage : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            enemiesHitBalanced = FindObjectsOfType<Enemy_Balanced>();
-            enemiesHitWeak = FindObjectsOfType<Enemy_Weak>();
-            enemiesHitStrong = FindObjectsOfType<Enemy_Strong>();
-            for (int i =0 ; i < enemiesHitBalanced.Length; i++)
+            enemiesHit = FindObjectsOfType<Enemy_Base>();
+
+            for (int i =0 ; i < enemiesHit.Length; i++)
             {
-                enemiesHitBalanced[i].TakeDamage(damage);
+                enemiesHit[i].TakeDamage(damage);
             }
-            for (int i = 0; i < enemiesHitWeak.Length; i++)
-            {
-                enemiesHitWeak[i].TakeDamage(damage);
-            }
-            for (int i = 0; i < enemiesHitStrong.Length; i++)
-            {
-                enemiesHitStrong[i].TakeDamage(damage);
-            }
+
         }
     }
 }

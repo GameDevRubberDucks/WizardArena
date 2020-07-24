@@ -20,15 +20,17 @@ public class Enemy_Base: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Find PLayer once we have a script on it
+        currentHP = health;
+        this.GetComponent<NavMeshAgent>().speed = speed;
         player = FindObjectOfType<Character_Control>();
         spawner = FindObjectOfType<Spawn_Controller>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        SeekPlayer();
+        DeathCheck();
     }
 
     public void TakeDamage(float damageRecieved)
@@ -61,6 +63,10 @@ public class Enemy_Base: MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             DealDamage(strength, collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Spell_Collision")
+        {
+            Debug.Log("Meteor Hit");
         }
     }
 

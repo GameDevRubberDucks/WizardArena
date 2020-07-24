@@ -8,7 +8,6 @@ public class Enemy_Weak: Enemy_Base
     // Start is called before the first frame update
     void Start()
     {
-
         health = 25.0f;
         speed = 90.0f;
         strength = 10.0f;
