@@ -68,4 +68,10 @@ public class Wave_List : MonoBehaviour
         // Return the enemy object so it can be spawned
         return enemy;
     }
+
+    //getter for the current wave
+    public int getCurrentWave()
+    {
+        return m_currentWaveIdx + 1;
+    }
 }

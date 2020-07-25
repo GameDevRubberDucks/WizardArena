@@ -108,4 +108,8 @@ public class Spawn_Controller : MonoBehaviour
             StartWave();
         }
     }
+    public int getEnemyLeft()
+    {
+        return m_spawnedEnemies.Count;
+    }
 }
