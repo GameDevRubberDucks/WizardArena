@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a3a24ee93b229447afa4d63dcfd57b1, type: 3}
-  m_Name: Cone_RockSpikes
+  m_Name: Beam_Lightning
   m_EditorClassIdentifier: 
-  m_name: Rock Spikes
-  m_icon: {fileID: 21300000, guid: 10b9b2aca9253d84db32c22bc408466c, type: 3}
-  m_fxPrefab: {fileID: 8542616113781125724, guid: 5f607fd278a108c4eb0b436cef51424b,
+  m_name: Lightning Bolt
+  m_icon: {fileID: 21300000, guid: 649fdd9479bf7534a86acfd548b85760, type: 3}
+  m_fxPrefab: {fileID: 995471054611098995, guid: 132d63751a49a1746b0e0096a41acc2c,
     type: 3}
-  m_damage: 30
-  m_cooldownLength: 2
-  m_indicatorType: 1
+  m_damage: 50
+  m_knockbackStr: 30
+  m_cooldownLength: 1
+  m_indicatorType: 2
