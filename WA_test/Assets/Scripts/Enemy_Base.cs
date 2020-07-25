@@ -36,6 +36,8 @@ public class Enemy_Base: MonoBehaviour
     public void TakeDamage(float damageRecieved)
     {
         currentHP -= damageRecieved;
+
+        Debug.Log(this.gameObject.name + " took " + damageRecieved + " damage. Health is now " + currentHP);
     }
     public void DealDamage(float damageDealt, GameObject player)
     {
