@@ -268,7 +268,7 @@ MonoBehaviour:
     m_cooldownTimeComplete: 0
     m_cooldownPercentage: 0
     m_readyToUse: 0
-  - m_spell: {fileID: 11400000, guid: b29a0442d16c76f4ea5e78eafccea334, type: 2}
+  - m_spell: {fileID: 11400000, guid: c79ba2cea0603f54697455241e43822c, type: 2}
     m_cooldownTimeComplete: 0
     m_cooldownPercentage: 0
     m_readyToUse: 0
