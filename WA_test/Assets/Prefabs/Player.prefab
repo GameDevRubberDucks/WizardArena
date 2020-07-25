@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 4977566783218265742}
   - component: {fileID: 4977566783218265741}
   - component: {fileID: 4977566783218265740}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spellSlots:
-  - m_spell: {fileID: 11400000, guid: 195c37b8513fd5e40bd5aaafa1451fd2, type: 2}
+  - m_spell: {fileID: 11400000, guid: a6ae47b9529a9614e83108a4ef454f75, type: 2}
     m_cooldownTimeComplete: 0
     m_cooldownPercentage: 0
     m_readyToUse: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
     m_cooldownTimeComplete: 0
     m_cooldownPercentage: 0
     m_readyToUse: 0
-  - m_spell: {fileID: 11400000, guid: 7c4f6bdbb0f04884e99dc93dff15e738, type: 2}
+  - m_spell: {fileID: 11400000, guid: 195c37b8513fd5e40bd5aaafa1451fd2, type: 2}
     m_cooldownTimeComplete: 0
     m_cooldownPercentage: 0
     m_readyToUse: 0
