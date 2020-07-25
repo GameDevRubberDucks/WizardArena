@@ -137,7 +137,7 @@ public class Spell_Controller : MonoBehaviour
             return;
 
         // Spawn the spell FX on the target indicator's current position and rotation
-        var targetObj = m_aimController.GetIndicatorObject();
+        var targetObj = m_aimController.GetSpellSpawnPoint();
         Vector3 targetPos = targetObj.transform.position;
         Quaternion targetRot = targetObj.transform.rotation;
         Instantiate(m_currentSpellSlot.m_spell.m_fxPrefab, targetPos, targetRot, null);

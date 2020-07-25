@@ -19,6 +19,7 @@ public class AimController : MonoBehaviour
 {
 
     public GameObject indicator;
+    public GameObject spellSpawnPoint;
     //universal indicator traits
     [Serializable]
     public struct IndicatorType
@@ -165,8 +166,8 @@ public class AimController : MonoBehaviour
         indicator.SetActive(true);
     }
 
-    public GameObject GetIndicatorObject()
+    public GameObject GetSpellSpawnPoint()
     {
-        return indicator;
+        return spellSpawnPoint;
     }
 }
