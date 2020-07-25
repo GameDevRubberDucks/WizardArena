@@ -17,6 +17,6 @@ MonoBehaviour:
   m_fxPrefab: {fileID: 995471054611098995, guid: 132d63751a49a1746b0e0096a41acc2c,
     type: 3}
   m_damage: 50
-  m_knockbackStr: 0.5
+  m_knockbackStr: 30
   m_cooldownLength: 1
   m_indicatorType: 2
