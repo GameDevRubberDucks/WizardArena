@@ -16,6 +16,6 @@ MonoBehaviour:
   m_icon: {fileID: 21300000, guid: 10b9b2aca9253d84db32c22bc408466c, type: 3}
   m_fxPrefab: {fileID: 8542616113781125724, guid: 5f607fd278a108c4eb0b436cef51424b,
     type: 3}
-  m_damage: 50
+  m_damage: 30
   m_cooldownLength: 2
   m_indicatorType: 1

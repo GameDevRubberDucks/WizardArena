@@ -13,6 +13,7 @@ public class Spell_Base : ScriptableObject
 
     [Header("Characteristics")]
     public float m_damage;
+    public float m_knockbackStr;
     public float m_cooldownLength;
     public SpellIndicatorType m_indicatorType;
 }
