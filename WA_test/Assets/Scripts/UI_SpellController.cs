@@ -24,6 +24,8 @@ public class UI_SpellController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spellController = FindObjectOfType<Spell_Controller>();
+
         //init local vars
         icon = new Image[slot.Length];
         CDshading = new Image[slot.Length];
@@ -46,7 +48,7 @@ public class UI_SpellController : MonoBehaviour
             icon[i].sprite = spellController.m_spellSlots[i].m_spell.m_icon;
 
             //get slot label
-            slotLabel[i].text = i.ToString();
+            slotLabel[i].text = (i+1).ToString();
         }
 
         //update the cd timers

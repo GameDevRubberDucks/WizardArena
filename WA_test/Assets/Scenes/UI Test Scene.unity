@@ -143,7 +143,7 @@ PrefabInstance:
     - target: {fileID: 532627042, guid: f3030cb39dd0ccc4398b1f871190e537, type: 3}
       propertyPath: spellController
       value: 
-      objectReference: {fileID: 964931412}
+      objectReference: {fileID: 0}
     - target: {fileID: 1076690056, guid: f3030cb39dd0ccc4398b1f871190e537, type: 3}
       propertyPath: waveList
       value: 
@@ -675,18 +675,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d231c721eb3fc0e4db35aa8a122f6db1, type: 3}
---- !u!114 &964931412 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4977566783218265740, guid: d231c721eb3fc0e4db35aa8a122f6db1,
-    type: 3}
-  m_PrefabInstance: {fileID: 964931411}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f90664df2f838c14b8e07b94ca40f3cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1608873608
 GameObject:
   m_ObjectHideFlags: 0

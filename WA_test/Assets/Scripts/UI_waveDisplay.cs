@@ -14,6 +14,7 @@ public class UI_waveDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        waveList = FindObjectOfType<Wave_List>();
         display = gameObject.GetComponent<TextMeshProUGUI>();
     }
 

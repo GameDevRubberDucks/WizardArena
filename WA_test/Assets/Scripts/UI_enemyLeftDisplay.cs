@@ -16,6 +16,7 @@ public class UI_enemyLeftDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawn_Controller = FindObjectOfType<Spawn_Controller>();
         display = gameObject.GetComponent<TextMeshProUGUI>();
     }
 
