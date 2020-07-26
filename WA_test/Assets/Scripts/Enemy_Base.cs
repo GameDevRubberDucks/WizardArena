@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class Enemy_Base: MonoBehaviour
@@ -8,7 +9,9 @@ public class Enemy_Base: MonoBehaviour
     //--- Setup Variables ---//
     public Character_Control player;
     public Spawn_Controller spawner;
+
     //--- Public Variables ---//
+    public Image m_healthBarFill;
 
     //Enemy Stats (Out of 100 for now)
     public float speed = 0.0f;
@@ -36,6 +39,8 @@ public class Enemy_Base: MonoBehaviour
     public void TakeDamage(float damageRecieved)
     {
         currentHP -= damageRecieved;
+
+        m_healthBarFill.fillAmount = currentHP / health;
     }
     public void DealDamage(float damageDealt, GameObject player)
     {

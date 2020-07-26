@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Spell_Controller.cs" />
     <Compile Include="Assets\Scripts\Spell_Object.cs" />
     <Compile Include="Assets\Scripts\TempClickDamage.cs" />
+    <Compile Include="Assets\Scripts\UI_PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\UI_SpellController.cs" />
     <Compile Include="Assets\Scripts\UI_enemyLeftDisplay.cs" />
     <Compile Include="Assets\Scripts\UI_waveDisplay.cs" />
