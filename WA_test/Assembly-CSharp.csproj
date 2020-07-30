@@ -63,6 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AttackBehavior.cs" />
+    <Compile Include="Assets\ChaseBehavior.cs" />
+    <Compile Include="Assets\IdleBehavior.cs" />
     <Compile Include="Assets\Scripts\AimController.cs" />
     <Compile Include="Assets\Scripts\Character_Control.cs" />
     <Compile Include="Assets\Scripts\Debug_ParticleCollision.cs" />

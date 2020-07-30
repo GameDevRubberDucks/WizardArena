@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spell_Collision
+  - Enemy
   layers:
   - Default
   - TransparentFX
