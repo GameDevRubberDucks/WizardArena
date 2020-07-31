@@ -3,35 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AttackBehavior : StateMachineBehaviour
+public class DeathBehaviour : StateMachineBehaviour
 {
-    public Transform parentObject;
-    public float attackRange;
-
-    private Transform playerPos;
-    private float dis;
-
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-        parentObject = animator.transform.parent;
+        // Leave the enemy body but destroy all of the other data attached to it
+        var animParent = animator.transform.parent;
+        animator.transform.parent = null;
+        Destroy(animParent.gameObject);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        dis = Vector3.Distance(playerPos.position, parentObject.position);
-        if (dis >= attackRange)
-        {
-            animator.SetBool("isAttack", false);
-        }
-    }
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-    }
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

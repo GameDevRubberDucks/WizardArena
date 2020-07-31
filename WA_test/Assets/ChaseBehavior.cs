@@ -6,10 +6,11 @@ using UnityEngine.UIElements;
 public class ChaseBehavior : StateMachineBehaviour
 {
     public float speed;
-    public Transform pos;
+    //public Transform pos;
+    public float chaseRange;
+    public float attackRange;
 
     private Transform playerPos;
-    private float dis;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -20,15 +21,15 @@ public class ChaseBehavior : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Vector3 nextPlayerPos = new Vector3(playerPos.position.x, -0.93f, playerPos.position.z);
-        animator.transform.position = Vector3.MoveTowards(animator.transform.position, nextPlayerPos, speed * Time.deltaTime);
+        //Vector3 nextPlayerPos = new Vector3(playerPos.position.x, -0.93f, playerPos.position.z);
+        //animator.transform.position = Vector3.MoveTowards(animator.transform.position, nextPlayerPos, speed * Time.deltaTime);
 
-        dis = Vector3.Distance(nextPlayerPos, animator.transform.position);
-        if (dis >= 10.0f)
+        float dis = Vector3.Distance(playerPos.position, animator.transform.position);
+        if (dis >= chaseRange)
         {
             animator.SetBool("isChasing", false);
         }
-        else if (dis <= 2.0f)
+        else if (dis <= attackRange)
         {
             animator.SetBool("isAttack", true);
         }

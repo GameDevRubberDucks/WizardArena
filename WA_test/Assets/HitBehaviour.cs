@@ -1,36 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
-public class AttackBehavior : StateMachineBehaviour
+public class HitBehaviour : StateMachineBehaviour
 {
-    public Transform parentObject;
-    public float attackRange;
-
-    private Transform playerPos;
-    private float dis;
+    private NavMeshAgent m_navMeshAgent;
+    private float m_navMeshSpeed;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-        parentObject = animator.transform.parent;
+        m_navMeshAgent = animator.GetComponentInParent<NavMeshAgent>();
+        m_navMeshSpeed = m_navMeshAgent.speed;
+
+        // Stop moving while being hit
+        m_navMeshAgent.speed = 0.0f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        dis = Vector3.Distance(playerPos.position, parentObject.position);
-        if (dis >= attackRange)
-        {
-            animator.SetBool("isAttack", false);
-        }
-    }
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        m_navMeshAgent.speed = m_navMeshSpeed;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

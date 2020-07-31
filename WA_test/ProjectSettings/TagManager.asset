@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spell_Collision
   - Enemy
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX

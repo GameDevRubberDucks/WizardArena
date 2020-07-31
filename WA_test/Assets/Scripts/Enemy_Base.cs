@@ -7,8 +7,11 @@ using UnityEngine.AI;
 public class Enemy_Base: MonoBehaviour
 {
     //--- Setup Variables ---//
-    public Character_Control player;
-    public Spawn_Controller spawner;
+    [HideInInspector] public Character_Control player;
+    [HideInInspector] public Spawn_Controller spawner;
+    public Animator enemyAnim;
+    public string enemyHitTrigger;
+    public string enemyDeathTrigger;
 
     //--- Public Variables ---//
     public Image m_healthBarFill;
@@ -41,10 +44,14 @@ public class Enemy_Base: MonoBehaviour
         currentHP -= damageRecieved;
 
         m_healthBarFill.fillAmount = currentHP / health;
+
+        // Play the animation if there is an animator attached
+        if (enemyAnim != null)
+            enemyAnim.SetTrigger(enemyHitTrigger);
     }
+
     public void DealDamage(float damageDealt, GameObject player)
     {
-        Debug.Log("Deal Damage");
         player.GetComponentInChildren<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
         player.GetComponent<Player_Health>().TakeDamage(damageDealt);
     }
@@ -54,6 +61,10 @@ public class Enemy_Base: MonoBehaviour
         if (currentHP <= 0.0f)
         {   
             spawner.EnemyKilled(this.gameObject);
+
+            // Play the animation if there is an animator attached
+            if (enemyAnim != null)
+                enemyAnim.SetTrigger(enemyDeathTrigger);
         }
     }
 
@@ -66,10 +77,10 @@ public class Enemy_Base: MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            DealDamage(strength, collision.gameObject);
-        }
+        //if (collision.gameObject.tag == "Player")
+        //{
+        //    DealDamage(strength, collision.gameObject);
+        //}
         if (collision.gameObject.tag == "Spell_Collision")
         {
             Debug.Log("Meteor Hit");

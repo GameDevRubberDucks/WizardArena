@@ -89,7 +89,7 @@ public class Spawn_Controller : MonoBehaviour
     {
         // Remove the enemy from the spawned list
         m_spawnedEnemies.Remove(_enemy);
-        Destroy(_enemy);
+        //Destroy(_enemy);
         // Check if the wave is now complete
         CheckForWaveCompletion();
     }

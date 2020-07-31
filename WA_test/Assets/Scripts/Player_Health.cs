@@ -24,6 +24,15 @@ public class Player_Health : MonoBehaviour
         currentHealth -= damage;
     }
 
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "EnemyAttack")
+        {
+            var enemyScript = collision.gameObject.GetComponentInParent<Enemy_Base>();
+            TakeDamage(enemyScript.strength);
+        }
+    }
+
     private void DeathCheck()
     {
         if (currentHealth <= 0.0f)

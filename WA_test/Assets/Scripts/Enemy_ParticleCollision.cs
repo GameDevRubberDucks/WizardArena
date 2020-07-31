@@ -2,7 +2,8 @@
 
 public class Enemy_ParticleCollision : MonoBehaviour
 {
-    public GameObject m_lastSpellToHit;
+    //--- Private Variables ---//
+    private GameObject m_lastSpellToHit;
 
     // Notes:
     // - For this function to be called, there are a couple of things to keep in mind
